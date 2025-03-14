@@ -1,0 +1,35 @@
+.header {
+    background-color: var(--header-bg);
+    border-color: var(--header-border);
+    box-shadow: var(--shadow-lg);
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 7%;
+    margin-left: 7%;
+}
+
+.logoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company {
+    padding: 8px;
+    background-color: var(--header-accent);
+    margin-right: 10px;
+    color: var(--text-white);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo {
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px;
+}
