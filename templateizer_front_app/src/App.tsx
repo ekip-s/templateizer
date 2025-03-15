@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router";
 import styles from "./App.module.css";
 import Header from "./components/organism/Header.tsx";
+import Home from "./components/pages/Home.tsx";
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
           <main className={styles.main}>
             <Routes>
               <Route path="/" element={<Navigate to="/home" />} />
-              <Route path="/home" element={<div>Home</div>} />
+              <Route path="/home" element={<Home />} />
             </Routes>
           </main>
           <footer>footer</footer>

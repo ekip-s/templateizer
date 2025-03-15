@@ -1,0 +1,50 @@
+.searchSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 12px;
+    padding: 10px 15px;
+    background: #fff;
+    border: 1px solid var(--widget-border);
+    border-radius: var(--btn-radius);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.checkboxWrapper span {
+    width: max-content;
+}
+
+.input {
+    flex: 1;
+    height: 40px;
+    min-width: 200px;
+}
+
+.inputText {
+    padding: 8px 12px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    height: 100%;
+    width: 100%;
+}
+
+.inputText:focus {
+    border-color: #2684FF;
+    outline: none;
+}
+
+.checkboxWrapper {
+    min-width: max-content;
+    gap: 8px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.reactSelect {
+    min-width: 200px;
+    height: 40px;
+}
