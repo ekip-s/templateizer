@@ -1,4 +1,4 @@
-package ru.templateizer.model;
+package ru.templateizer.model.category;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UuidGenerator;
+import ru.templateizer.model.Template;
 
 import java.time.Instant;
 import java.util.HashSet;
@@ -31,6 +32,10 @@ public class Category {
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private Instant createdAt;
+    @Column(name = "creator")
+    private String creator;
+    @Column(name = "immutable")
+    private Boolean immutable;
     @OneToMany(mappedBy = "category")
     private Set<Template> templates = new HashSet<>();
 }

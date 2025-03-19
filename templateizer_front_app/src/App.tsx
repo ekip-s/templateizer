@@ -5,6 +5,8 @@ import Home from './components/pages/Home.tsx';
 import { AuthProvider } from './keycloak/AuthContext.tsx';
 import ProtectedRoute from './keycloak/ProtectedRoute.tsx';
 import PermissionGuard from './keycloak/PermissionGuard.tsx';
+import LogoutPage from './components/pages/LogoutPage.tsx';
+import AdminPage from './components/pages/AdminPage.tsx';
 
 const App = () => {
   return (
@@ -21,12 +23,12 @@ const App = () => {
                   path="/admin"
                   element={
                     <PermissionGuard permissions={['templateizer_admin']}>
-                      <div>admin panel</div>
+                      <AdminPage />
                     </PermissionGuard>
                   }
                 />
               </Route>
-              <Route path="/logout" element={<div>Разлогинились</div>} />
+              <Route path="/logout" element={<LogoutPage />} />
             </Routes>
           </main>
           <footer>footer</footer>

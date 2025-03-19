@@ -1,0 +1,15 @@
+.btnNode {
+    background-color: var(--header-accent);
+    margin-right: 5px;
+    padding: 5px;
+    color: var(--text-white);
+    letter-spacing: 0.5px;
+    border: 1px solid var(--widget-border);
+    border-radius: var(--btn-radius-small);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+}
+
+.notActive, .btnNode:hover {
+    opacity: 0.7;
+}

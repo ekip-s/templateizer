@@ -5,6 +5,7 @@ CREATE TABLE if not exists categories (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name varchar(100) NOT NULL UNIQUE,
     creator varchar(100),
+    immutable boolean,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
@@ -34,3 +35,8 @@ CREATE INDEX if not exists idx_templates_category ON templates(category_id) WHER
 CREATE INDEX if not exists idx_templates_public_user ON templates(is_public, user_id);
 CREATE INDEX if not exists idx_utm_user_fav ON user_template_mapping(user_id, is_favorite) WHERE is_favorite = true;
 CREATE INDEX if not exists idx_utm_template_rating ON user_template_mapping(template_id, rating);
+
+INSERT INTO categories (name, creator, immutable)
+VALUES ('Другое', 'admin', true)
+ON CONFLICT (name)
+DO NOTHING;

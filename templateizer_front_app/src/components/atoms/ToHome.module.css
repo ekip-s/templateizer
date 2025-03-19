@@ -1,0 +1,12 @@
+.toHome {
+    cursor: pointer;
+}
+
+.toHome div {
+    font-size: 12px;
+    color: var(--text-primary);
+}
+
+.toHome div:hover {
+    color: var(--text-accent);
+}
