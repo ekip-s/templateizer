@@ -20,7 +20,7 @@ interface UseApiResponse<T> {
   data: T | null;
   loading: boolean;
   error: Error | null;
-  setData: React.Dispatch<React.SetStateAction<T | null>>;
+  setData: React.Dispatch<React.SetStateAction<T>>;
   refresh: () => Promise<void>;
 }
 
@@ -31,7 +31,7 @@ const useApi = <T = unknown,>({
   headers = {},
 }: ApiConfig): UseApiResponse<T> => {
   const { getToken } = useAuth();
-  const [data, setData] = useState<T | null>(null);
+  const [data, setData] = useState<T>([] as T);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
   const [shouldFetch, setShouldFetch] = useState(true);
@@ -115,7 +115,7 @@ const useApi = <T = unknown,>({
     // Отменяем текущий запрос
     abortControllerRef.current.abort();
     setShouldFetch(true); // Разблокируем запросы при ручном обновлении
-    setData(null);
+    setData([] as unknown as T);
     setError(null);
   }, []);
 

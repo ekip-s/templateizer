@@ -8,11 +8,11 @@ import { useAuth } from '../../keycloak/AuthContext.tsx';
 import Category from '../../model/CategoryModel.tsx';
 
 interface AddNewCategoriesType {
-  refresh: () => void;
   data: Category[];
+  setData: (data: Category[] | ((prevData: Category[]) => Category[])) => void;
 }
 
-const AddNewCategories = ({ refresh, data }: AddNewCategoriesType) => {
+const AddNewCategories = ({ data, setData }: AddNewCategoriesType) => {
   const [immutable, setImmutable] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState('');
@@ -26,10 +26,14 @@ const AddNewCategories = ({ refresh, data }: AddNewCategoriesType) => {
 
     if (isCategoryExist) {
       setError('Категория с таким именем уже существует!');
-      return; // Прерываем выполнение
+      return;
     }
 
-    send({
+    const addCategoryByList = (category: Category) => {
+      setData((prevData) => [category, ...prevData]);
+    };
+
+    send<Category>({
       url: '/categories/api/v1',
       method: 'POST',
       body: {
@@ -39,10 +43,8 @@ const AddNewCategories = ({ refresh, data }: AddNewCategoriesType) => {
       token: getToken(),
       setLoading: setLoading,
       setError: setError,
+      setDataInfo: addCategoryByList,
     });
-    if (error.trim()) {
-      refresh();
-    }
   };
 
   return (
