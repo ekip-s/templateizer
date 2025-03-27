@@ -8,7 +8,7 @@ import Loading from '../atoms/Loading.tsx';
 import Error from '../atoms/Error.tsx';
 
 const Categories = () => {
-  const { data, error, refresh, loading } = useApi<Category[]>({
+  const { data, error, loading, setData } = useApi<Category[]>({
     url: '/categories/api/v1/list',
   });
 
@@ -24,8 +24,8 @@ const Categories = () => {
     <div className={localStyles.categories}>
       <section className={`${styles.categoryManagement} ${styles.adminNode}`}>
         <h4>Управление категориями</h4>
-        <AddNewCategories refresh={refresh} data={data} />
-        <CategoriesList refresh={refresh} data={data} />
+        <AddNewCategories data={data} setData={setData} />
+        <CategoriesList data={data} setData={setData} />
       </section>
     </div>
   );

@@ -4,15 +4,15 @@ import CategoryNode from '../molecules/CategoryNode.tsx';
 
 interface CategoriesListType {
   data: Category[];
-  refresh: () => void;
+  setData: (data: Category[] | ((prevData: Category[]) => Category[])) => void;
 }
 
-const CategoriesList = ({ data, refresh }: CategoriesListType) => {
+const CategoriesList = ({ data, setData }: CategoriesListType) => {
   return (
     <section className={styles.categoriesList}>
       <h5>Список категорий</h5>
       {data.map((category: Category) => (
-        <CategoryNode key={category.id} category={category} refresh={refresh} />
+        <CategoryNode key={category.id} category={category} setData={setData} />
       ))}
     </section>
   );

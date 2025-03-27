@@ -5,7 +5,7 @@ type RequestOptions<T = unknown> = {
   token?: string | null;
   headers?: HeadersInit;
   setDataInfo?: (data: T) => void;
-  dataType?: 'json' | 'string';
+  dataType?: 'json' | 'empty' | 'string';
   setLoading?: (loading: boolean) => void;
   setError?: (error: string | '') => void;
 };
@@ -44,10 +44,12 @@ const send = async <T = unknown,>({
       throw new Error(`Ошибка HTTP: ${response.status}`);
     }
 
-    let result: T | string;
+    let result: T | string | null;
 
     if (dataType === 'string') {
       result = await response.text();
+    } else if (dataType === 'empty') {
+      result = null;
     } else {
       result = (await response.json()) as T;
     }
