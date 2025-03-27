@@ -1,0 +1,10 @@
+.main {
+    flex: 1 1 auto;
+    background-color: var(--page-bg);
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}

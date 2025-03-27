@@ -1,0 +1,7 @@
+.selectWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 7%;
+    margin-left: 7%;
+}

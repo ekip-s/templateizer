@@ -1,0 +1,42 @@
+.addNewTemplate {
+    margin-top: 10px;
+}
+
+.inputTextarea {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 100%;
+    min-height: 10vh;
+    padding: 10px;
+}
+
+.addTemplateBtn {
+    margin-top: 10px;
+    padding: 4px;
+    background-color: var(--header-accent);
+    flex-shrink: 0;
+    min-width: 150px;
+    box-sizing: border-box;
+}
+
+.btnWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.topMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.select {
+    width: max-content;
+    min-width: 150px;
+}

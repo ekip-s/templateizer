@@ -1,0 +1,20 @@
+.adminNode {
+    margin-top: 10px;
+    border: 1px solid var(--header-border);
+    padding: 8px;
+    background-color: var(--header-bg);
+    border-radius: var(--btn-radius-small);
+    box-shadow: var(--shadow-lg);
+    max-width: 100%; /* Ограничиваем контейнер по ширине экрана */
+    width: auto; /* Автоматическая ширина */
+}
+
+
+.topSelector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 7%;
+    margin-left: 7%;
+    margin-top: 10px;
+}

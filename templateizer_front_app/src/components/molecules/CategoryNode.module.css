@@ -1,0 +1,28 @@
+.categoryNode {
+    padding: 5px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--widget-border);
+    border-radius: var(--btn-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.categoryName {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.categoryName label {
+    margin-right: 5px;
+    font-weight:bold;
+}
+
+.deleteBtn {
+    margin-left: 5px;
+    padding: 4px;
+    background-color: #DC3545;
+    border-color: #DC3545;
+}
